@@ -13,6 +13,3 @@ Currently no installer
     conda create -n tiffit python=3.8
     pip install tifftools
     conda install -c conda-forge matplotlib
-
-If you want to use spyder, follow this:    
-https://github.com/spyder-ide/spyder/wiki/Working-with-packages-and-environments-in-Spyder
