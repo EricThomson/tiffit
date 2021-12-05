@@ -1,0 +1,17 @@
+*~*
+*tmp*
+*__pycache__*
+*dropbox*
+desktop.ini
+background/
+data/
+.cph_tmp*
+*dll*
+*exe*
+*.docx
+*egg*
+build/
+dist/
+tiffit-*/
+htmlcov/
+*coverage
