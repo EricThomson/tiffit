@@ -4,7 +4,7 @@ Conversion, concatenation. and metadata extraction.
 
 That's it. Nothing fancy.
 
-Lighgtweight wrapper for the tifffile package:
+Built using the tifffile package:
 https://github.com/cgohlke/tifffile/
 
 ## usage
