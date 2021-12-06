@@ -1,17 +1,14 @@
 """
-tiffit.py
-
 Part of tiffit package
 https://github.com/EricThomson/tiffit
-
 """
 
-import tifffile
 import os
+import argparse
+import tifffile
 
 
-# %%
-def write(original_path, new_path, verbose=True):
+def convert(original_path, new_path, verbose=True):
     """
     Convert tiff to format that can be read by everybody.
 
@@ -33,13 +30,13 @@ def write(original_path, new_path, verbose=True):
     if new_path == original_path:
         answer = input("The new file will overwrite the original. Is this correct? (y/n):  ")
         if answer != "y":
-            print("\nexiting good_tiff()")
+            print("\nexiting tiffit.convert()")
             return
 
     if os.path.isfile(new_path):
         answer = input(f"{new_path} already exists. Overwrite? (y/n):  ")
         if answer != "y":
-            print("\nexiting good_tiff()")
+            print("\nexiting tiffit.convert()")
             return
 
     loaded_movie = tifffile.imread(original_path)
@@ -50,15 +47,19 @@ def write(original_path, new_path, verbose=True):
                    imagej=False,
                    bigtiff=True)
     if verbose:
-        print("success!") if os.path.isfile(new_path) else print("failed")
+        print("tiffit.convert() success!") if os.path.isfile(new_path) else print("tiffit.convert() failed")
 
     return new_path
 
 
 if __name__ == "__main__":
-    data_dir = '../data/'
-    original_path = data_dir + r'005d58f7-9841-4854-b6d9-3e8075efc0f5_mc.tiff'
-    print(original_path)
-    new_path = data_dir + 'test_converted.tiff'
-    print(new_path)
-    write(original_path, new_path)
+    """
+    To test converter:
+       python tiffit.py --old D:/tiffit/data/mesmerized.tiff --new D:/tiffit/data/converted.tiff 
+    """
+    convert_parser = argparse.ArgumentParser(description="converting tiff file")
+    convert_parser.add_argument("--old", type=str, required=True)
+    convert_parser.add_argument("--new", type=str, required=True)
+    args = convert_parser.parse_args()
+    print(f"in tiffit...\nold: {args.old}\nnew: {args.new}")
+    convert(args.old, args.new)

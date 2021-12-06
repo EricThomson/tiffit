@@ -22,14 +22,13 @@ Currently no installer
 
 
 ## To do
-- do basic setup.py for local pip install
 - argparser for command line:
-  https://www.digitalocean.com/community/tutorials/how-to-use-argparse-to-write-command-line-programs-in-python
-  https://www.freecodecamp.org/news/the-python-handbook/#howtoacceptargumentsfromthecommandlineinpython
-- command line direct calling using entry points
+  - https://towardsdatascience.com/a-simple-guide-to-command-line-arguments-with-argparse-6824c30ab1c3
+  - make so you can call different functions with argparser
+- do basic setup.py for local pip install
 - metadata function
 - concatenation function
-
+- command line direct calling using entry points
 
 ## Acknowledgments
 - Powered by the [tifffile](https://github.com/cgohlke/tifffile/) package.
