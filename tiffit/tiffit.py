@@ -52,14 +52,47 @@ def convert(original_path, new_path, verbose=True):
     return new_path
 
 
+def metadata(filepath):
+    print("here is the metadata")
+
+
+def concatenate(path1, path2):
+    print("I just contactenated some shit, bruv")
+# %%
+
+
 if __name__ == "__main__":
     """
     To test converter:
-       python tiffit.py --old D:/tiffit/data/mesmerized.tiff --new D:/tiffit/data/converted.tiff 
+       python tiffit.py --old D:/tiffit/data/mesmerized.tiff --new D:/tiffit/data/converted.tiff
     """
-    convert_parser = argparse.ArgumentParser(description="converting tiff file")
+    tiffit_parser = argparse.ArgumentParser(description="tiffit parser")
+    tiffit_subparsers = tiffit_parser.add_subparsers('func')
+
+    convert_parser = tiffit_subparsers.add_parser('convert',
+                                                  help='tiffit converter')
     convert_parser.add_argument("--old", type=str, required=True)
     convert_parser.add_argument("--new", type=str, required=True)
-    args = convert_parser.parse_args()
-    print(f"in tiffit...\nold: {args.old}\nnew: {args.new}")
-    convert(args.old, args.new)
+
+    metadata_parser = tiffit_subparsers.add_parser('metadata',
+                                                   help='tiffit metadata extractor')
+    metadata_parser.add_argument("--path", type=str, required=True)
+
+    concat_parser = tiffit_subparsers.add_parser('concat',
+                                                 help='tiffit concatenation')
+    concat_parser.add_argument("--path1", type=str, required=True)
+    concat_parser.add_argument("--path2", type=str, required=True)
+
+    args = tiffit_parser.parse_args()
+    print(f"Parser output: {args}")
+
+    if args.func == 'convert':
+        print('CONVERT')
+    elif args.func == 'metadata':
+        print('METADATA')
+    elif args.func == 'concat':
+        print('CONCAT')
+    else:
+        print("HUH?")
+    # print(f"in tiffit...\nold: {args.old}\nnew: {args.new}")
+    # convert(args.old, args.new)
