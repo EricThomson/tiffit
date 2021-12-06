@@ -4,7 +4,7 @@ Figuring out multipage tiff basics
 Using tifffile package
 """
 import tifffile  # to use imread and imwrite
-from tifffile import TiffFile
+# from tifffile import TiffFile
 import os
 import matplotlib.pyplot as plt
 import anaties as ana
@@ -128,7 +128,7 @@ for key in tags.keys():
 # %%
 tags[256]
 tags[262]
-tags[tifftools.Tag.
+# tags[tifftools.Tag.
 
 # %%
 tags[tifftools.Tag.NewSubFileType.value]  # this is useless
@@ -141,7 +141,7 @@ tags[262]
 
 tags[50838]
 
-exififd= info['ifds'][0]['tags']
+exififd = info['ifds'][0]['tags']
 exififd.keys()
 
 # %% ifd = image file directory
@@ -152,29 +152,29 @@ Below is tifffile stuff
 # %%
 
 # %%
-tf= TiffFile(file_path)  # as tf:
+# tf= TiffFile(file_path)  # as tf:
 
 # %%
-print(f"Byte order: {tf.byteorder}")
-num_images= len(tf.pages)
-print(f"Num images: {num_images}")
-first_ifd= tf.pages[0]
-print(first_ifd.shape)
-page_tags= first_ifd.tags
+# print(f"Byte order: {tf.byteorder}")
+# num_images= len(tf.pages)
+# print(f"Num images: {num_images}")
+# first_ifd= tf.pages[0]
+# print(first_ifd.shape)
+# page_tags= first_ifd.tags
 
-print(tf.is_imagej)
-print(tf.is_bigtiff)
-# %%
+# print(tf.is_imagej)
+# print(tf.is_bigtiff)
+# # %%
 
+# tf.close()
+# %%
+# image_data= first_ifd.asarray()
+# plt.imshow(image_data, cmap='gray')
 
 # %%
-image_data= first_ifd.asarray()
-plt.imshow(image_data, cmap='gray')
-
+# import tifffile
 # %%
-import tifffile
-# %%
-loaded_movie= tifffile.imread(file_path)
+loaded_movie = tifffile.imread(file_path)
 
 # %%
 print(new_path)
