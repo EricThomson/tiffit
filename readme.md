@@ -14,17 +14,18 @@ From command line:
 
 
 ## installation
-Currently no installer
+Make sure you have pip installed otherwise it might install in your base environemnt like a twit.
 
-    conda create -n tiffit python=3.8
-    conda install -c conda-forge matplotlib
-    pip install tifftools
+    conda install pip
+    pip install -e .
+
 
 
 ## To do
 - argparser for command line:
+  - https://docs.python.org/3/library/argparse.html#the-add-argument-method
+  - https://www.psaggu.com/learning-python/2020/08/07/pfd-writing-command-line-tools-part-2.html
   - https://towardsdatascience.com/a-simple-guide-to-command-line-arguments-with-argparse-6824c30ab1c3
-  - make so you can call different functions with argparser
 - do basic setup.py for local pip install
 - metadata function
 - concatenation function
