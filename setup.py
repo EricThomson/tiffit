@@ -11,7 +11,7 @@ setup(name='tiffit',
       licence="MIT",
       url="https://github.com/EricThomson/tiffit",
       packages=find_packages(include=['tiffit', 'tiffit.*'],),
-      install_requires=['tifffile'],
+      install_requires=['tifffile', 'tifftools'],
       entry_points={
           'console_scripts': ['tiffit=tiffit.tiffit:main', ]
       },

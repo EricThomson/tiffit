@@ -1,11 +1,10 @@
 # tiffit
-Lightweight command-line interface for multi-page tiff files.
+Lightweight command-line interface for handling (BigTIFF) files.
 Conversion, metadata extraction, and concatenation.
 
-That's it. Nothing fancy.
+That's it. Nothing fancy. If you are in a jam and know you want bigtiff,
+hopefully this can help you.
 
-Built using the tifffile package:
-https://github.com/cgohlke/tifffile/
 
 ## installation and usage
 Install with pip and then use from command line.
@@ -15,26 +14,30 @@ Install with pip and then use from command line.
     # convert file into a well-behaved bigtiff file
     tiffit convert old.tiff new.tiff
 
-    # get metadata about file without loading file into memory
-    # tells you number of images, dimensions, and data type
+    # get info about file without loading into memory
     tiffit metadate filename.tiff
 
-    # concatenate two tiff files into a newfile
+    # concatenate two tiff files into a single bigtiff file
     tiffit concat file1.tiff file2.tiff newfile.tiff
 
-## For more advanced functions
-tiffit will remain a lightweight command-line tool. For more complexity, see:
-- [opencv](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
-- [pillow](https://github.com/python-pillow/Pillow)
-- [tiffile](https://github.com/cgohlke/tifffile/)
-- [tifftools](https://github.com/DigitalSlideArchive/tifftools)
 
-If there are specific tiff tags you would like to see read out from metadata, please let me know, bearing in mind I am trying to keep this interface fairly universal and simple.
+## Notes / caveats
+- If there is other information you would like read out from the info command, please let me know, bearing in mind I am trying to keep this interface fairly universal and simple.
+- For an excellent overview of tiff (`thousands of incompatible file formats`), see [https://www.fileformat.info/format/tiff/egff.htm](this excellent overview). It is a bit dated, but is still the best thing I've found.
+- If you need a package with more complexity, see:
+    - [opencv](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
+    - [pillow](https://github.com/python-pillow/Pillow)
+    - [tiffile](https://github.com/cgohlke/tifffile/)
+    - [tifftools](https://github.com/DigitalSlideArchive/tifftools)
+
 
 ## To do
-- implement metadata function
-- implement concatenation function
+- add keyword argument to info so user can check on specific image in stack.
+Better yet, don't allow mixing of formats just make this a pure bigtiff library: add autoconversion of concatenated files.
+- add verbosity controller for convert and concat.
+
+
 
 ## Acknowledgments
-- Powered by the [tifffile](https://github.com/cgohlke/tifffile/) package.
+- Powered by the [tifffile](https://github.com/cgohlke/tifffile/) and [tifftools](https://github.com/DigitalSlideArchive/tifftools) packages.
 - Developed with support from NIH Bioinformatics, NIEHS Neurobehavioral Core, and NIEHS Neurobiology Laboratories.
