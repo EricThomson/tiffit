@@ -31,9 +31,8 @@ Install with pip and then use from command line.
 
 ## To do
 - add keyword argument to info so user can check on specific image in stack.
-Better yet, don't allow mixing of formats just make this a pure bigtiff library: add autoconversion of concatenated files.
-- add verbosity controller for convert and concat.
-
+- don't allow mixing of formats: add autoconversion of concatenated files.
+- add verbosity keyword controller for convert and concat.
 
 
 ## Acknowledgments
