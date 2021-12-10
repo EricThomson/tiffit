@@ -38,4 +38,4 @@ Better yet, don't allow mixing of formats just make this a pure bigtiff library:
 
 ## Acknowledgments
 - Powered by the [tifffile](https://github.com/cgohlke/tifffile/) and [tifftools](https://github.com/DigitalSlideArchive/tifftools) packages.
-- Developed with support from NIH Bioinformatics, NIEHS Neurobehavioral Core, and NIEHS Neurobiology Laboratories.
+- Developed with support from NIH Bioinformatics, NIEHS Neurobehavioral Core, NIEHS Neurobiology Laboratories. In particular thanks to Shaohua Wang for help during development.
