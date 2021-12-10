@@ -1,9 +1,6 @@
 # tiffit
-Lightweight command-line interface for handling (BigTIFF) files.
-Conversion, metadata extraction, and concatenation.
-
-That's it. Nothing fancy. If you are in a jam and know you want bigtiff,
-hopefully this can help you.
+Lightweight command-line interface for handling tiff files in BigTIFF format.
+Conversion, metadata extraction, and concatenation. That's it. Nothing fancy.
 
 
 ## installation and usage
