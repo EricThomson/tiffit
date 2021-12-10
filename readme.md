@@ -21,7 +21,7 @@ Install with pip and then use from command line.
 
 ## Notes / caveats
 - If there is other information you would like read out from the info command, please let me know, bearing in mind I am trying to keep this interface fairly universal and simple.
-- For an excellent overview of tiff (`thousands of incompatible file formats`), see [this excellent overview](https://www.fileformat.info/format/tiff/egff.htm). It is a bit dated, but is still the most readable reference I've found.
+- For a summary of tiff (`thousands of incompatible file formats`) specs, see [this excellent overview](https://www.fileformat.info/format/tiff/egff.htm). It is a bit dated, but is still the most readable and detailed reference I've found.
 - If you need a package with more complexity, see:
     - [opencv](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
     - [pillow](https://github.com/python-pillow/Pillow)
