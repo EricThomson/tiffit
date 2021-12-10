@@ -13,7 +13,7 @@ Install with pip and then use from command line.
     tiffit convert old.tiff new.tiff
 
     # get info about file without loading into memory
-    tiffit metadate filename.tiff
+    tiffit info filename.tiff
 
     # concatenate two tiff files into a single bigtiff file
     tiffit concat file1.tiff file2.tiff newfile.tiff
