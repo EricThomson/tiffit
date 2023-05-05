@@ -30,6 +30,7 @@ Install with pip and then use from command line.
 
 
 ## To do
+- add option to split tiff file in two
 - add keyword argument to info so user can check on specific image in stack.
 - don't allow mixing of formats: add autoconversion of concatenated files.
 - add verbosity keyword controller for convert and concat.
