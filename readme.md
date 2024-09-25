@@ -1,18 +1,41 @@
 # tiffit
-command-line interface for multi-page tiff conversion, concatenation. and metadata extraction. That's it. Nothing fancy.
+Lightweight command-line interface for handling tiff files in BigTIFF format.
 
-Lighgtweight wrapper for tifftools:
-https://github.com/DigitalSlideArchive/tifftools.
+Convert, extract information, and concatenate. That's it. Nothing fancy.
 
-    tiffit write x.tiff y.tiff --bigtiff --bigendian
-    tiffit concat x.tiff y.tiff -bigtiff --bigendian
 
-## installation
-Currently no installer
+## installation and usage
+Install with pip and then use from command line.
 
-    conda create -n tiffit python=3.8
-    pip install tifftools
-    conda install -c conda-forge matplotlib
+    pip install tiffit
 
-If you want to use spyder, follow this:    
-https://github.com/spyder-ide/spyder/wiki/Working-with-packages-and-environments-in-Spyder
+    # convert file into a well-behaved bigtiff file
+    tiffit convert old.tiff new.tiff
+
+    # get info about file without loading into memory
+    tiffit info filename.tiff
+
+    # concatenate two tiff files into a single bigtiff file
+    tiffit concat file1.tiff file2.tiff newfile.tiff
+
+
+## Notes / caveats
+- If there is other information you would like to see read out from the `info` command, please open an issue.
+- For a summary of tiff (`thousands of incompatible file formats`) specs, see [this excellent overview](https://www.fileformat.info/format/tiff/egff.htm). It is a bit dated, but is still the most readable and detailed reference I've found.
+- If you need a package with more complexity, see:
+    - [opencv](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html)
+    - [pillow](https://github.com/python-pillow/Pillow)
+    - [tiffile](https://github.com/cgohlke/tifffile/)
+    - [tifftools](https://github.com/DigitalSlideArchive/tifftools)
+
+
+## To do
+- add option to split tiff file in two (tifftools split)
+- add keyword argument to info so user can check on specific image in stack.
+- don't allow mixing of formats: add autoconversion of concatenated files.
+- add verbosity keyword controller for convert and concat.
+
+
+## Acknowledgments
+- Powered by the [tifffile](https://github.com/cgohlke/tifffile/) and [tifftools](https://github.com/DigitalSlideArchive/tifftools) packages.
+- Developed with support from NIH Bioinformatics, NIEHS Neurobehavioral Core, NIEHS Neurobiology Laboratories. In particular thanks to Shaohua Wang for help during development.
